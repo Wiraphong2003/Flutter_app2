@@ -204,6 +204,8 @@ class UserDetailPage extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
+            Text("Information",
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
             Text('ID: ${user.id}'),
             Text('Username: ${user.username}'),
             Text('Email: ${user.email}'),
