@@ -279,7 +279,9 @@ class _MyAppState extends State<MyApp> {
 // }
 
 Future<List<User>> fetchUsers(BuildContext context) async {
-  final response = await http.get(Uri.parse('http://10.160.81.172:8080/users'));
+  // final response = await http.get(Uri.parse('http://10.160.81.172:8080/users'));
+  final response = await http
+      .get(Uri.parse('https://jolly-cyan-bell-bottoms.cyclic.cloud/users'));
 
   if (response.statusCode == 200) {
     final List<dynamic> jsonList = json.decode(response.body);
