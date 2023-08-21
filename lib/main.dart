@@ -199,14 +199,16 @@ class _MyAppState extends State<MyApp> {
                 future: _userList,
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
-                    return CircularProgressIndicator();
+                    return Center(
+                      child: CircularProgressIndicator(), // แสดงวงกลมโหลด
+                    );
                   } else if (snapshot.hasError) {
                     return Text('Error: ${snapshot.error}');
                   } else if (!snapshot.hasData) {
                     return Text('No data available');
                   } else {
                     return ListView.builder(
-                      padding: EdgeInsets.all(16.0),
+                      padding: EdgeInsets.all(15.0),
                       itemCount: snapshot.data!.length,
                       itemBuilder: (context, index) {
                         final user = snapshot.data![index];
