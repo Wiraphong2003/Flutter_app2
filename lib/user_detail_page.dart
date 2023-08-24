@@ -41,6 +41,7 @@ class UserDetailPage extends StatelessWidget {
                 return Text('Error loading image');
               },
             ),
+            SizedBox(height: 20),
           ],
         ),
       ),

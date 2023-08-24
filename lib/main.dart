@@ -372,41 +372,204 @@ class UserDetailPage extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 10,
+              height: 20,
             ),
-            Text("Information",
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-            Text('ID: ${user.id}'),
-            Text('Username: ${user.username}'),
-            Text('Email: ${user.email}'),
-            Text('Phone: ${user.phone}'),
-            Text('Website: ${user.website}'),
-            SizedBox(height: 16),
-            Text('Address:',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-            Text('Street: ${user.address.street}'),
-            Text('Street: ${user.address.street}'),
-            Text('Suite: ${user.address.suite}'),
-            Text('City: ${user.address.city}'),
-            Text('Zipcode: ${user.address.zipcode}'),
-            SizedBox(height: 16),
-            Text('Company:',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-            Text('Name: ${user.company.name}'),
-            // Text('Catch Phrase: ${user.company.catchPhrase}'),
-            RichText(
-              text: TextSpan(
-                children: [
-                  TextSpan(
-                    text: 'Catch Phrase: ${user.company.catchPhrase}',
-                    style: TextStyle(
-                      color: Colors.black,
+            Row(
+              children: [
+                Center(
+                  child: Card(
+                    elevation: 4,
+                    margin: EdgeInsets.all(1),
+                    child: Container(
+                      width: 355,
+                      height: 170,
+                      padding: EdgeInsets.all(16),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Icon(
+                                Icons
+                                    .info, // สามารถเปลี่ยนไอคอนตามที่คุณต้องการ
+                                // color: Color.fromARGB(255, 152, 0,0,), // เปลี่ยนสีไอคอนตามที่คุณต้องการ
+                                color: Color(0xFFFF9800), // rgb(255, 152, 0)
+                                size: 24, // เปลี่ยนขนาดไอคอนตามที่คุณต้องการ
+                              ),
+                              SizedBox(
+                                  width:
+                                      8), // เพิ่มระยะห่างระหว่างไอคอนกับข้อความ
+                              Text(
+                                "Information",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 10),
+                          Text('ID: ${user.id}',
+                              style: TextStyle(fontSize: 16)),
+                          Text('Username: ${user.username}',
+                              style: TextStyle(fontSize: 16)),
+                          Text('Email: ${user.email}',
+                              style: TextStyle(fontSize: 16)),
+                          Text('Phone: ${user.phone}',
+                              style: TextStyle(fontSize: 16)),
+                          Text('Website: ${user.website}',
+                              style: TextStyle(fontSize: 16)),
+                        ],
+                      ),
                     ),
                   ),
-                ],
-              ),
+                )
+              ],
             ),
-            Text('Business: ${user.company.bs}'),
+            SizedBox(
+              height: 5,
+            ),
+            Row(
+              children: [
+                Center(
+                  child: Card(
+                    elevation: 4,
+                    margin: EdgeInsets.all(1),
+                    child: Container(
+                      width: 355,
+                      height: 120,
+                      padding: EdgeInsets.all(16),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Icon(
+                                Icons
+                                    .location_on, // สามารถเปลี่ยนไอคอนตามที่คุณต้องการ
+                                color: Color(
+                                    0xFFFF9800), // เปลี่ยนสีไอคอนตามที่คุณต้องการ
+                                size: 24, // เปลี่ยนขนาดไอคอนตามที่คุณต้องการ
+                              ),
+                              SizedBox(
+                                  width:
+                                      8), // เพิ่มระยะห่างระหว่างไอคอนกับข้อความ
+                              Text(
+                                "Address",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Text('Street: ${user.address.street}'),
+                          Text('Suite: ${user.address.suite}'),
+                          Text('City: ${user.address.city}'),
+                          Text('Zipcode: ${user.address.zipcode}'),
+                        ],
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Row(
+              children: [
+                Center(
+                  child: Card(
+                    elevation: 4,
+                    margin: EdgeInsets.all(1),
+                    child: Container(
+                      width: 355,
+                      height: 110,
+                      padding: EdgeInsets.all(16),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Icon(
+                                Icons
+                                    .work, // สามารถเปลี่ยนไอคอนตามที่คุณต้องการ
+                                color: Color(
+                                    0xFFFF9800), // เปลี่ยนสีไอคอนตามที่คุณต้องการ
+                                size: 24, // เปลี่ยนขนาดไอคอนตามที่คุณต้องการ
+                              ),
+                              SizedBox(
+                                  width:
+                                      8), // เพิ่มระยะห่างระหว่างไอคอนกับข้อความ
+                              Text(
+                                "Company",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+
+                          Text('Name: ${user.company.name}'),
+                          // Text('Catch Phrase: ${user.company.catchPhrase}'),
+                          RichText(
+                            text: TextSpan(
+                              children: [
+                                TextSpan(
+                                  text:
+                                      'Catch Phrase: ${user.company.catchPhrase}',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Text('Business: ${user.company.bs}'),
+                        ],
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
+
+            // Text("Information",
+            //     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+            // Text('ID: ${user.id}'),
+            // Text('Username: ${user.username}'),
+            // Text('Email: ${user.email}'),
+            // Text('Phone: ${user.phone}'),
+            // Text('Website: ${user.website}'),
+            // SizedBox(height: 16),
+
+            // Text('Address:',
+            //     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+            // Text('Street: ${user.address.street}'),
+
+            // Text('Suite: ${user.address.suite}'),
+            // Text('City: ${user.address.city}'),
+            // Text('Zipcode: ${user.address.zipcode}'),
+            SizedBox(height: 16),
+            // Text('Company:',
+            //     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+            // Text('Name: ${user.company.name}'),
+            // // Text('Catch Phrase: ${user.company.catchPhrase}'),
+            // RichText(
+            //   text: TextSpan(
+            //     children: [
+            //       TextSpan(
+            //         text: 'Catch Phrase: ${user.company.catchPhrase}',
+            //         style: TextStyle(
+            //           color: Colors.black,
+            //         ),
+            //       ),
+            //     ],
+            //   ),
+            // ),
+            // Text('Business: ${user.company.bs}'),
           ],
         ),
       ),
